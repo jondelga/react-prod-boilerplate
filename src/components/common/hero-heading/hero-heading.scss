@@ -1,0 +1,24 @@
+.header {
+  position: relative;
+  width: 90%;
+  left: 5%;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+.header:before {
+  content: '';
+  position: absolute;
+  height: 8px;
+  background-color: black;
+  bottom: 0%;
+  width: 100%
+}
+
+.h1 {
+  margin-left: -2px;
+  color: black;
+  font-size: 4.5rem;
+  font-weight: 900;
+  font-family: Chivo;
+}

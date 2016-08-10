@@ -1,0 +1,23 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "semi": 2,
+    "quotes": ["error", "single"],
+    "consistent-return": "off",
+    "no-magic-numbers": "off",
+    "arrow-parens": ["error", "as-needed"],
+    "no-empty-label": "off",
+    "no-arrow-condition": "off",
+    "space-before-keywords": "off",
+    "space-after-keywords": "off",
+    "space-return-throw-case": "off",
+    "filenames/filenames": "off"
+  },
+  "extends": "defaults/configurations/walmart/es6-react-test"
+}

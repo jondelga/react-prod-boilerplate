@@ -1,0 +1,27 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.container {
+  width: 100%;
+  min-width: 450;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.main {
+  flex: 1;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.panel {
+  width: 450;
+}
