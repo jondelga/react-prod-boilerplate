@@ -8,9 +8,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const CleanPlugin = require('./utils/clean-plugin');
-const NodeUtils = require('./src/services/common/node-service');
+const NodeUtils = require('./src/app/services/common/node-service');
 const appConfig = require('./config/config');
 
+console.log(`${__dirname}, ${path.resolve(__dirname, 'src/app/index.html')}`);
 const config = {
   output: {
     path: path.join(__dirname, 'dist'),
@@ -30,7 +31,7 @@ const config = {
     }),
     new ExtractTextPlugin('css/bundle.css', { allChunks: true }),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src/index.html'),
+      template: path.resolve(__dirname, 'src/app/index.html'),
       inject: 'body'
     }),
     new webpack.DefinePlugin({
@@ -71,13 +72,14 @@ const config = {
 };
 
 if (NodeUtils.isProduction()) {
-  config.entry = './src/bootstrap';
+  console.log('is production');
+  config.entry = './src/app/bootstrap';
 } else {
   config.devtool = 'eval';
   config.entry = [
     `webpack-dev-server/client?http://localhost:${appConfig.example.port}`,
     'webpack/hot/only-dev-server',
-    './src/bootstrap'
+    './src/app/bootstrap'
   ];
   config.plugins.push(
       new webpack.HotModuleReplacementPlugin()

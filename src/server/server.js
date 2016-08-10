@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 /* globals console, __dirname */
-import config from './config/config';
-import NodeUtils from './src/services/common/node-service';
+import config from '../../config/config';
+import NodeUtils from '../app/services/common/node-service';
 
 const { example } = config;
 if (!example) {
@@ -18,12 +18,12 @@ if (NodeUtils.isProduction()) {
   const app = express();
 
     // Configure static resources
-  app.use(express.static(`${__dirname}/dist`));
+  app.use(express.static(path.join(__dirname, '../../dist')));
 
     // Configure server-side routing
   app.get('*', (req, res) => {
     const dist = path.join(
-      __dirname, '/dist/index.html'
+      __dirname, '../../dist/index.html'
     );
     res.sendFile(dist);
   });
@@ -37,7 +37,7 @@ if (NodeUtils.isProduction()) {
 
   const webpack = require('webpack');
   const WebpackDevServer = require('webpack-dev-server');
-  const webpackConfig = require('./webpack.config.js');
+  const webpackConfig = require('../../webpack.config.js');
 
   new WebpackDevServer(webpack(webpackConfig), {
     hot: true,

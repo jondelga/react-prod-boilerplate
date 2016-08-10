@@ -14,8 +14,8 @@
     "test:integration": "cross-env NODE_ENV=test mocha \"test/integration/**/*.js\" ",
     "test:coverage": "cross-env NODE_ENV=test && istanbul cover node_modules/mocha/bin/_mocha",
     "test:watch": "npm test -- --watch ",
-    "start-dev-server": "cross-env NODE_ENV=development babel-node server.js",
-    "start-server": "cross-env NODE_ENV=production babel-node server.js"
+    "start-dev-server": "cross-env NODE_ENV=development babel-node src/server/server.js",
+    "start-server": "cross-env NODE_ENV=production babel-node src/server/server.js"
   },
   "author": "Jon Delgado  ",
   "license": "MIT",
